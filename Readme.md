@@ -34,6 +34,7 @@
 - create a file and dont load the file with `<script>`
 - name this file with anything you like and type the variable you want the file to contain. then export that variable. an example is in `cart.js`
 - with the file with that has the`type="module"` attribute to be able to use the modules and access it. import that varible with the format `import fileName from './file/path';`.
+- NOTE: import has another syntax `import * as` which imports everything from a file and can be accessed through object or function
 
 ### getting a variable out of a file
 
