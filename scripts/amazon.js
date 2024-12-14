@@ -1,3 +1,5 @@
+import { cart } from "../data/cart.js";
+
 //product variable is called a data structure as it organizes data
 
 let productsHTML = "";
