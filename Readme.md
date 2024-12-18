@@ -53,3 +53,7 @@ let's the file get variables out of other files
 ### Normalizing the data
 
 - using the id we can get or access other properties of an object in an array by using `findIndex` on an array. an example of this is in `checkout.js` or use a `forEach` loop
+
+### saving the file locally using localStorage.setitem
+
+- an example is in `cart.js`
