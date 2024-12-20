@@ -136,3 +136,12 @@ https://github.com/jasmine/jasmine/releases/tag/v5.1.1
 ### Jasmine Documentation
 
 https://jasmine.github.io/api/5.1/global
+
+### how to run test (more info in jas doc)
+
+1. open SpecRunner.html (spec means test) in the project it is renamed to test.html
+2. write test using jasmine some examples:
+   `describe('name of the test suite', () => {})`
+   `it('what the test is doing', () => {})`
+   to see more, go in the jasmine documentation
+   the example of the code being used is in MoneyTest.js under the jasmine-test
