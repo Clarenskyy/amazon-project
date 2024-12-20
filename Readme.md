@@ -106,3 +106,21 @@ splits the code into 3
 3. Controller
 
 - runs the code when we interact with the page an example is in `checkout.js` line `131` below
+
+## TESTING CODE
+
+1. trying out the code by opening the website
+2. Manual Testing
+3. Automated Testing
+
+- use code to test code, examples are in `test` folder
+
+### 2 types of test cases
+
+1. basic test case
+
+- test code if it works
+
+2. edge cases
+
+- test with values that are tricky
