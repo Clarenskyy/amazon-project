@@ -124,3 +124,15 @@ splits the code into 3
 2. edge cases
 
 - test with values that are tricky
+
+## JASMINE
+
+- testing frameworks
+
+### Jasmine testing framework
+
+https://github.com/jasmine/jasmine/releases/tag/v5.1.1
+
+### Jasmine Documentation
+
+https://jasmine.github.io/api/5.1/global
