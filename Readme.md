@@ -90,4 +90,19 @@ let's the file get variables out of other files
 - `export default`
 - `import nameofexportfunc from`
 
-### JAVASCRIPT NUGGETS
+## MVC
+
+makes sure the page always matches the data.
+splits the code into 3
+
+1. Model
+
+- all the code that saves and manages data which can be seen in the `data` folder
+
+2. View
+
+- takes data and generate HTML. an example of this is in `checkout.js` line `16` and `17`
+
+3. Controller
+
+- runs the code when we interact with the page an example is in `checkout.js` line `131` below
