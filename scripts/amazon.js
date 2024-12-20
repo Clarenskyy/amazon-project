@@ -62,14 +62,16 @@ products.forEach((product) => {
 
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
-function updateCartQuantity() {
-  let cartQuantity = 0;
+let cartQuantity = JSON.parse(localStorage.getItem("cartQuantity"));
 
+function updateCartQuantity() {
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
 
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+
+  localStorage.setItem("cartQuantity", JSON.stringify(cartQuantity));
 }
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {

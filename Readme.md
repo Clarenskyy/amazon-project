@@ -57,3 +57,37 @@ let's the file get variables out of other files
 ### saving the file locally using localStorage.setitem
 
 - an example is in `cart.js`
+- you can access localstorage syntaxes or code using console in the inspect of your website just search for local storage syntaxes
+  some are `localStorage.clear();`, and `localStorage.remove()`
+
+## External Libraries
+
+- its a code outside of a project
+- it is used to access js code from the internet through script tag an example of this is in `checkout.html`
+
+### WHY WE USE EXTERNAL LIBRARIES
+
+- let us share code
+- save time
+- avoid duplicating work
+
+### how to find external libraries
+
+- through google
+- through ai
+
+### minification
+
+- process of compressing js code
+
+### putting external libraries in js modules
+
+- we will use `ESM` or `EcmaScript Modules` which is also just Javascript modules
+- when loading that we will not use script tag anymore rather go to the js file you will use it on and `import {hello} from 'url'` an example of this is in checkout.js
+
+### default export/import
+
+- `export default`
+- `import nameofexportfunc from`
+
+### JAVASCRIPT NUGGETS
