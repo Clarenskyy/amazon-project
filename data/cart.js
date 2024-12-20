@@ -19,6 +19,7 @@ if (localStorage.getItem("cart")) {
 
 export function addToCart(productId) {
   let matchingItem;
+
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
       matchingItem = cartItem;
@@ -53,4 +54,18 @@ export function removeFromCart(productId) {
 
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function updateDeliveryOption(productId, deliveryOptionsId) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.deliveryOptionsId = deliveryOptionsId;
+
+  saveToStorage();
 }
