@@ -269,3 +269,9 @@ console.log(businessCart instanceof Cart);
 - private properties/methods are properties/methods that will only be available inside a class and cannot be access anywhere else
 
 - to private a property/method simply put `#` before the name and when itirating it you will also include the `#`. an example of this is in `cart-class.js`
+
+### `array.map(() => {})`
+
+- loops through an array and for each value it runs a function, kinda similar to for each.
+- map also creates a new array where it puts what you return to in
+- it basically takes a value, runs a function and transform it and putting it in a new array
