@@ -63,9 +63,11 @@ document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 let cartQuantity = JSON.parse(localStorage.getItem("cartQuantity"));
 
-updateCartQuantity();
+document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 
 function updateCartQuantity() {
+  let cartQuantity = 0;
+
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });

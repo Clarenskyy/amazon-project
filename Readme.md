@@ -145,3 +145,53 @@ https://jasmine.github.io/api/5.1/global
    `it('what the test is doing', () => {})`
    to see more, go in the jasmine documentation
    the example of the code being used is in MoneyTest.js under the jasmine-test
+
+### Integration Test
+
+- test many units/pieces of codes working together
+
+1. how the page looks
+2. how the test behave
+
+### HOOKS
+
+- `beforeEach(() => {})` hook this will run this function before any of the test is done
+- you can put all the set up code for your test here for a clean looking code
+- here are some more
+
+```bash
+beforeEach() //runs code before each tests
+afterEach() //runs code after each tests
+beforeAll() //runs code before all tests
+afterAll() //runs code after all tests
+```
+
+### jasmine codes
+
+```bash
+describe('stringName', () => {}) //this is the test suite, it contains all the test done for a specific thing
+  it('stringName', () => {}) //this is a subclass of a test suite it is put inside the describe() function
+      spyOn(localStorage, functionToBeMock) //creates a mock array or storage that wont affect your original storage or database
+        .and.callFake(() => { return 0 }) //added after spyOn() this returns a value for that fake database
+      expect() //this gets the result or value of something
+        .toEqual() //compares the value if its the same in expect
+        .not.toEqual() //compares the value if its not the same in expect
+        .toContain() //looks in the expect if it contain said value
+```
+
+### tips for jasmine
+
+- when doing an integration test, check the data if its correct. example is checking the length of an array if it matches if said test is done
+- you can make a mock localstorage using
+
+```bash
+ spyOn(localStorage, 'methodlikesetItem').and.callFake(() => {
+  [{
+    what: 'you want to add'
+    number: 3
+  }]
+})
+```
+
+- to check if something is in an element we can use `.toContain('whatyouwanttocheck')` this is used after `expect()`
+- you can calso check if something is not equal to something by by adding `.not` before `.toEqual`
