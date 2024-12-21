@@ -195,3 +195,30 @@ describe('stringName', () => {}) //this is the test suite, it contains all the t
 
 - to check if something is in an element we can use `.toContain('whatyouwanttocheck')` this is used after `expect()`
 - you can calso check if something is not equal to something by by adding `.not` before `.toEqual`
+
+## OBJECT ORIENTED PROGRAMMING
+
+### difference between PROCEDURAL PROGRAMMING
+
+- PROCEDURAL PROGRAMMING organizes code into seperat function whilst OOP organize code into an object
+
+### why use it?
+
+- OOP tries to represent the real world
+- it is easy to recreate something with same to similar function
+
+### naming
+
+- for things that generate object use PascalCasing
+
+### methods
+
+- function inside an object
+
+### `this.`
+
+- gives the object that are contain in the same object, which gives the name of the object itself. assuming the function is in the object `cart` and has a property `cartItems` we wont have to do `cart.cartItems` instead we will use `this.cartItems`.
+
+### tips
+
+- when reusing code, instead of copy pasting, create a function that generate that oop
