@@ -275,3 +275,7 @@ console.log(businessCart instanceof Cart);
 - loops through an array and for each value it runs a function, kinda similar to for each.
 - map also creates a new array where it puts what you return to in
 - it basically takes a value, runs a function and transform it and putting it in a new array
+
+## INHERITANCE
+
+- lets us resure code between classes
