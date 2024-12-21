@@ -222,3 +222,44 @@ describe('stringName', () => {}) //this is the test suite, it contains all the t
 ### tips
 
 - when reusing code, instead of copy pasting, create a function that generate that oop
+
+## Class
+
+- an object generator, makes it easy to generate an object
+- to create a class follow this format
+
+```bash
+class Cart {
+  cartItems = [];
+}
+```
+
+notice how its different to object. instead of `:` we use `=` and instead of `,` we use `;`
+
+to generate an instance we must use the syntax `new` then itirate the class:
+
+```bash
+const cart = new Cart();
+```
+
+### checking an instance
+
+```bash
+console.log(businessCart instanceof Cart);
+```
+
+### naming
+
+- use PascalCasing for classes
+
+### benefits of classes
+
+- class looks like the obj that we generate
+- they have extra features for OOP
+
+#### constructor
+
+- lets us run setup code after creating an object an example of this is in `cart-class.js`
+
+1. method has to be named `constructor`
+2. it should not return anything
