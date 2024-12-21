@@ -263,3 +263,9 @@ console.log(businessCart instanceof Cart);
 
 1. method has to be named `constructor`
 2. it should not return anything
+
+### Private properties and methods
+
+- private properties/methods are properties/methods that will only be available inside a class and cannot be access anywhere else
+
+- to private a property/method simply put `#` before the name and when itirating it you will also include the `#`. an example of this is in `cart-class.js`
