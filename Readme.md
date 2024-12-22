@@ -279,3 +279,30 @@ console.log(businessCart instanceof Cart);
 ## INHERITANCE
 
 - lets us resure code between classes
+
+### parent class and child class
+
+in this website there are items that can be categorize, but has different or additional selection like how in clothes there could be a size selection but other products dont, in this case we can make a class thats for clothes but this with this we will be reusing A LOT of code hence why we use inheretance. in this scenario if we look at `product.js` the class `Product` will be the **parent class** as it is where the inheritance will come from, therefor the new class `Clothing` will be called a **child class**
+
+### how to create inheritance
+
+```bash
+class Clothing extends Product
+```
+
+`extends` basically means it will inherint all the properties and method from the parent class. an example of this is in `product.js`
+note: if you dont have any constructor in your child class it will by default use the one in the parent class.
+
+### `super()`
+
+a feature of inheritance that calls the constructor of the parent class, so that you dont have to do it again
+an extra feature also calls a specific method from a parent class
+`super.functionName()`
+
+### discriminator property
+
+it tells us which class something is to be turned into
+
+### polymorphism
+
+using methods without knowing the class (an alternative to `if else`)
