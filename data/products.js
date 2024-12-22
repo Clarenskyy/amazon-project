@@ -61,6 +61,8 @@ class Clothing extends Product {
 });
 console.log(product1); */
 
+const date = new Date();
+console.log(date);
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",

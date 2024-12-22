@@ -219,6 +219,52 @@ describe('stringName', () => {}) //this is the test suite, it contains all the t
 
 - gives the object that are contain in the same object, which gives the name of the object itself. assuming the function is in the object `cart` and has a property `cartItems` we wont have to do `cart.cartItems` instead we will use `this.cartItems`.
 
+- it can be used anywhere in the code. like when creating an object
+
+```bash
+console.log(this);
+
+const object2 = {
+a: 2,
+b: this.a
+};
+
+function logThis() {
+  console.log(this)
+}
+// all will result in this being undefine as there is no object it can refer to
+
+
+```
+
+- inside a function, `this` has a special funtion.
+
+```bash
+function logThis() {
+  console.log(this)
+}
+
+logThis();
+logThis.call('hello')
+// this will equal this to "hello"
+// do what you will with this info :>
+```
+
+- however arrow function will be different. as this will only get the value it has before the arrow function instead of taking a new one. IT DOES NOT CHANGE THE VALUE OF THIS. this is done to avoid overriding `this`
+
+```bash
+this //undefine
+
+const object3 = {
+  method: () => {
+    console.log(this)
+  }
+}
+
+object3.method();
+//will display undefine
+```
+
 ### tips
 
 - when reusing code, instead of copy pasting, create a function that generate that oop
@@ -306,3 +352,19 @@ it tells us which class something is to be turned into
 ### polymorphism
 
 using methods without knowing the class (an alternative to `if else`)
+
+### how to test classes
+
+- its the same as normal testing
+
+### built-in classes
+
+classes provided by the languange
+
+#### `Date()`
+
+create object that represent the current date and time
+
+##### `toLocaleTimeString()`
+
+method in the date class that tells us the current time
