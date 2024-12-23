@@ -164,6 +164,7 @@ beforeEach() //runs code before each tests
 afterEach() //runs code after each tests
 beforeAll() //runs code before all tests
 afterAll() //runs code after all tests
+  done() //a function that waits and lets us control when to go to the next step. this is useful for asynchronous code or codes that has backend
 ```
 
 ### jasmine codes
@@ -177,6 +178,7 @@ describe('stringName', () => {}) //this is the test suite, it contains all the t
         .toEqual() //compares the value if its the same in expect
         .not.toEqual() //compares the value if its not the same in expect
         .toContain() //looks in the expect if it contain said value
+
 ```
 
 ### tips for jasmine
