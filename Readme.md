@@ -522,4 +522,14 @@ xhr.send();
 // the response type will be an image
 ```
 
+### Callback
+
+- a function to run in the future, can be a normal function with a name, or an anonymous function
+
+```bash
+setTimeout(() => {
+  console.log('hello');
+}, 3000);
+```
+
 ### Asynch / Await
