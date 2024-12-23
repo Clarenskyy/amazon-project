@@ -708,3 +708,89 @@ async function loadPage() {
 - lets us wait for a promise to finish, before going to the next line. this is an alternatice for `.then`. so it basically let us write async code like normal code. thats why its so powerful
 - we can only use await inside an asynch funtion
 - we can also saved a value retun by resolve by putting the whole argument in a variable
+
+## Error Handling
+
+### in XHR
+
+- unexpected errors like no internet and etc
+
+```bash
+xhr.addEventListener('error', () => {
+  console.log('Unexpected error. Please try again later.')
+```
+
+### in promises
+
+- we will use a method `.catch(() => {})` if theres any error in the request it will run the funtion inside the catch method. `catch()` also has a parameter name error, which tells the detail of the error
+
+### in async await
+
+- using `try / catch`. we will put code that could cause an error inside the ` try` and after the try and `catch` this does the samething as the catch in handling error in promises
+
+- but `try / catch` also works in normal code too
+
+```bash
+async function loadPage() {
+  console.log("load page");
+  try {
+  await loadProductsFetch();
+
+  const value = await new Promise((resolve) => {
+    loadCart(() => {
+      resolve('value3');
+    });
+  });
+  } catch (error) {}
+
+
+  renderOrderSummary();
+  renderPaymentSummary();
+
+  return `value2`;
+}
+```
+
+- note that error handling is done when it is something putside our control
+
+## manually creating an error
+
+### synch error
+
+- `throw` is a feature that will manually create error that skips an entire block and run codes inside catch
+
+```bash
+async function loadPage() {
+  console.log("load page");
+  try {
+  throw `error`;
+  await loadProductsFetch();
+
+  const value = await new Promise((resolve) => {
+    loadCart(() => {
+      resolve('value3');
+    });
+  });
+  } catch (error) {}
+
+
+  renderOrderSummary();
+  renderPaymentSummary();
+
+  return `value2`;
+}
+```
+
+### asynch error
+
+- if we need to create an error in the future. we use `reject()`
+
+```bash
+onst value = await new Promise((resolve, reject) => {
+    loadCart(() => {
+      reject('error')
+      resolve('value3');
+    });
+  });
+  } catch (error) {}
+```
