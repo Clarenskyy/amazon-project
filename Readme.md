@@ -527,6 +527,7 @@ xhr.send();
 ### Callback
 
 - a function to run in the future, can be a normal function with a name, or an anonymous function
+- but this causes too many indents, thats why promises are important
 
 ```bash
 setTimeout(() => {
@@ -534,4 +535,116 @@ setTimeout(() => {
 }, 3000);
 ```
 
-### Asynch / Await
+## PROMISES
+
+- better way to handle asynchronous code
+- it is similar to `done()` function in jasmine testing framework
+- lets us wait for some code to finish, before going to the next step
+
+### how to create a promise:
+
+```bash
+// built-in class that needs a funtion as a parameter
+new Promise(() => {
+    console.log("promise");
+});
+```
+
+#### in that function it also has parameters that are useful
+
+1. resolve
+
+- function thats similar to `done()` function, lets us control when to go to the next
+
+```bash
+new Promise((resolve) => {
+  loadProducts(() => {
+    resolve();
+  });
+})
+```
+
+- we can add a parameter in the resolve, he will then pass this value in the arrow function, which you can use
+
+```bash
+new Promise((resolve) => {
+  console.log("start promise");
+  loadProducts(() => {
+    console.log("finish loading");
+    resolve('value1');
+  });
+})
+  .then((value) => {
+    return new Promise((resolve) => {
+      loadCart(() => {
+        resolve();
+      });
+    });
+  })
+```
+
+### `.then()`
+
+- this is the NEXT STEP. after something is resolve it will run the funtion you gave it to do
+
+```bash
+new Promise((resolve) => {
+  console.log("start promise");
+  loadProducts(() => {
+    console.log("finish loading");
+    resolve();
+  });
+}).then(() => {
+  renderOrderSummary();
+  renderPaymentSummary();
+});
+
+```
+
+if we want to use another resolve inside `.then()` we can return a new `Promise`:
+
+```bash
+new Promise((resolve) => {
+  console.log("start promise");
+  loadProducts(() => {
+    console.log("finish loading");
+    resolve();
+  });
+}).then(() => {
+  return new Promise((resolve) => {
+    loadCart(() => {
+        resolve()
+    });
+  });
+});
+```
+
+- promises lets us have as many steps as we need, and keep out code flat
+
+### `Promise.all()`
+
+- allows us to run multiple promises at the same time and wait for all of them to finish
+- we can give it an array or promises, to run these promises at the same time
+
+```bash
+Promise.all([
+  new Promise((resolve) => {
+    console.log("start promise");
+    loadProducts(() => {
+      console.log("finish loading");
+      resolve();
+    });
+  }),
+
+  new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  }),
+]).then(() => {
+  renderOrderSummary();
+  renderPaymentSummary();
+});
+```
+
+- when giving a value to resolve in `Promise.all()`
