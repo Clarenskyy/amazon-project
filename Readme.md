@@ -368,3 +368,158 @@ create object that represent the current date and time
 ##### `toLocaleTimeString()`
 
 method in the date class that tells us the current time
+
+## BACKEND
+
+another computer that manages the data of a website
+
+### TERMINOLOGIES
+
+1. Request - sending a message to the backend
+2. Response - the backend sending an http message according to the request
+3. Request-Response Cycle = 1 request 1 response
+
+### how does the computer send information to another computer?
+
+- through HTTP (HyperText Transfer Protocol)
+
+### `new XMLHttpRequest()`
+
+- a built-in class by js. this creates a new http message that we want to send to the backend (message is also known as request)
+
+#### `.open()`
+
+- sets up the request
+- takes two parameter
+  1. type of message
+  - `'GET'` - get some information from the backend
+  - `'POST'` -
+  - `'PUT'` -
+  - `'DELETE'` -
+  2. Where to send the HTTP message
+  - this is done through URL
+    #### URL (Uniform Resource Locator)
+    - like an address, but for the internet
+    - helps us locate another computer on the internet
+    #### URL Paths
+    - part that comes after the domain name. and we can send a url through this different path and then will give different response depending on the url path
+
+#### `.send()`
+
+- sends the http message accross the internet to a backend
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://supersimplebackend.dev");
+xhr.send();
+//the whole code sets up an HTTP message then send it across the internet to the backend provided
+```
+
+#### `.response`
+
+- the problem with this is that it takes time so we must do it like this:
+- contains the response of the backend in string
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.addEventListener("load", () => {
+  console.log(xhr.response);
+});
+//loads wait for xhr to load before it runs other code so that it will go smoothly
+xhr.open("GET", "https://supersimplebackend.dev");
+xhr.send();
+```
+
+### NETWORK
+
+- for backend instead of console you will open Network besides sources and performance.
+- this network contains all the HTTP messages that are coming in and out of our computer.
+- BUT you need to open network then refresh to see the HTTP messages
+
+#### headers
+
+- tell us types of request and the url we sent it too
+
+#### response
+
+- this contains the response of the backend you requested too
+
+### Status Code
+
+#### `4` or `5`
+
+for codes that starts with `4` like `404` or `400` means that it is our problem
+for codes that starts with `5` it indicates that its the backends problem
+
+#### `2`
+
+- means that the response was successfull. this can be seen in the header of network
+
+### Backend API
+
+- application programming interface(API)
+- this basically means how we interact with the backend
+
+### Types of data backend responds with backend
+
+-
+
+1. Text
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.addEventListener("load", () => {
+  console.log(xhr.response);
+});
+
+xhr.open("GET", "https://supersimplebackend.dev/hello");
+xhr.send();
+// the response type will be test or string
+```
+
+2. JSON
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.addEventListener("load", () => {
+  console.log(xhr.response);
+});
+
+xhr.open("GET", "https://supersimplebackend.dev/products/first");
+xhr.send();
+// the response type will be json, which you can JSON.parse() to use it.
+```
+
+3. HTML
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.addEventListener("load", () => {
+  console.log(xhr.response);
+});
+
+xhr.open("GET", "https://supersimplebackend.dev/documentation");
+xhr.send();
+// the response type will be HTML
+```
+
+4. image
+
+```bash
+const xhr = new XMLHttpRequest();
+
+xhr.addEventListener("load", () => {
+  console.log(xhr.response);
+});
+
+xhr.open("GET", "https://supersimplebackend.dev/images/apple.jpg");
+xhr.send();
+// the response type will be an image
+```
+
+### Asynch / Await
