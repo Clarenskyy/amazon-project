@@ -648,3 +648,34 @@ Promise.all([
 ```
 
 - when giving a value to resolve in `Promise.all()`
+
+## `fetch()`
+
+- lets us make a http request to a backend but uses a promise
+- by default uses `GET` to send http request
+
+```bash
+// using fetch
+function loadProductsFetch() {
+  fetch("https://supersimplebackend.dev/products");
+}
+```
+
+```bash
+// not using fetch
+function loadProducts() {
+  xhr.open("GET", "https://supersimplebackend.dev/products");
+  xhr.send();
+}
+```
+
+- fetch uses a promise to get the response instead of a call back
+- fetch also saved the response to the parameter of the function inside the `.then` just like in response and we will then use the `.json()` to get the data attach to the response. note that `.json` is an asynchronous code
+
+```bash
+function loadProductsFetch() {
+  fetch("https://supersimplebackend.dev/products").then((response) => {
+    response.json();
+  })
+}
+```

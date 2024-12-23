@@ -3,17 +3,19 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 //import "../data/cart-oop.js"; //if needed just remove the //
 //import "../data/cart-class.js";
 //import "../data/backend-practice.js";
-import { loadProducts } from "../data/products.js";
+import { loadProductsFetch } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
 
 Promise.all([
-  new Promise((resolve) => {
+  loadProductsFetch(),
+
+  /*  new Promise((resolve) => {
     console.log("start promise");
-    loadProducts(() => {
+    loadProductsFetch(() => {
       console.log("finish loading");
       resolve();
     });
-  }),
+  }), */
 
   new Promise((resolve) => {
     loadCart(() => {
