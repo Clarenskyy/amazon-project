@@ -679,3 +679,32 @@ function loadProductsFetch() {
   })
 }
 ```
+
+## ASYNC / AWAIT
+
+- shortcut for promises that removes extra code
+
+### ASYNC
+
+- makes a function return a promise
+
+```bash
+async function loadPage() {
+  console.log("load page");
+}
+
+```
+
+- when returning a value in async function it will convert or act like `resolve()` and will be saved on the pparameter on the next step
+
+```bash
+(`.then((valueSavedHere) => {
+
+})`)
+```
+
+### AWAIT
+
+- lets us wait for a promise to finish, before going to the next line. this is an alternatice for `.then`. so it basically let us write async code like normal code. thats why its so powerful
+- we can only use await inside an asynch funtion
+- we can also saved a value retun by resolve by putting the whole argument in a variable
