@@ -825,3 +825,30 @@ document
 window.location.href = "orders.html";
 //this will change the url of the site to https://website.com/orders.html
 ```
+
+## URL parameters
+
+- also known as search parameters
+- lets us save data directly on the URL
+  we can create a URL parameter by:
+  http://127.0.0.1:5500/tracking.html?orderId=123&productId=456
+
+the `?` is the key that we are creating a url parameter, you can then add more by using `&` this is done when a website needs multiple websites thats just the same as the other instead of making an intirely new HTML we can just add an id or data on the url so that we dont have to
+
+- we can then get that parameters using a built-in class `URL()` and use a property `.searchParams` and the method `.get()` that'll let us get the url parameters. (when you need to just ask chat gpt for details)
+
+```bash
+const url = new URL(window.location.href);
+      url.searchParams.get("orderId")
+```
+
+to access that url parameter. this is how to do it:
+BE CREATIVE WITH IT CLARENCE!
+
+```bash
+<a href="tracking.html?orderId=123&productId=456">
+  <button class="track-package-button button-secondary">
+    Track package
+  </button>
+</a>
+```
