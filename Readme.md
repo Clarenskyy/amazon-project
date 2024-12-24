@@ -395,9 +395,9 @@ another computer that manages the data of a website
 - takes two parameter
   1. type of message
   - `'GET'` - get some information from the backend
-  - `'POST'` -
-  - `'PUT'` -
-  - `'DELETE'` -
+  - `'POST'` - create something
+  - `'PUT'` - update something
+  - `'DELETE'` - delete something
   2. Where to send the HTTP message
   - this is done through URL
     #### URL (Uniform Resource Locator)
@@ -793,4 +793,35 @@ onst value = await new Promise((resolve, reject) => {
     });
   });
   } catch (error) {}
+```
+
+## sending something in the backend
+
+```bash
+document
+    .querySelector(".js-place-order")
+    .addEventListener("click", async () => {
+      const response = await fetch("https://supersimplebackend.dev/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cart: cart,
+        }),
+      });
+
+      const order = await response.json();
+
+      console.log(order);
+    });
+```
+
+## `window.location`
+
+- changes the url to another
+
+```bash
+window.location.href = "orders.html";
+//this will change the url of the site to https://website.com/orders.html
 ```
